@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class VRtest : MonoBehaviour
 {
-    public int x = 0;
+    public int a = 10;
     public Text Mytxt;
-    public GameObject click;
+    public int z, y, c;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,16 +19,16 @@ public class VRtest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
-    void FixedUptade()
+    void FixedUpdate()
     {
-        x++;
-        Mytxt.text = x.ToString();
     }
-    public void ClickBut()
+    public void OnCollisionEnter(Collision collision)
     {
-       click.SetActive(!(click.activeSelf));
+        a--;
+        Mytxt.text = a.ToString();
     }
 }
+    
